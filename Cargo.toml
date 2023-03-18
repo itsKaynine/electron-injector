@@ -1,0 +1,30 @@
+[package]
+name = "electron-injector"
+version = "0.1.0"
+edition = "2021"
+description = """
+electron-injector is an open source command-line tool written in Rust that
+enables you to inject JavaScript code into Electron apps at runtime. It is
+inspired by the Python project electron-inject and offers similar functionality.
+"""
+keywords = ["electron", "js", "inject", "debug"]
+categories = ["command-line-utilities", "debugging"]
+repository = "https://github.com/itsKaynine/electron-injector"
+documentation = "https://github.com/itsKaynine/electron-injector"
+authors = ["Punnawut Khowkittipaiboon <me@itskaynine.com>"]
+readme = "README.md"
+license = "MIT OR Apache-2.0"
+autotests = false
+
+[dependencies]
+anyhow = "1.0"
+clap = { version = "4.1.8", features = ["derive"] }
+log = "0.4"
+portpicker = "0.1.1"
+pretty_env_logger = "0.4"
+reqwest = { version = "0.11", features = ["blocking", "json"] }
+rust-embed = "6.6.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1"
+tungstenite = "0.18.0"
+url = "2.3"
