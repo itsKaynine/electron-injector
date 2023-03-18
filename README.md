@@ -8,7 +8,7 @@
 
 You can download pre-compiled binaries from the [releases](https://github.com/itsKaynine/electron-injector/releases) page and add the binary to your `PATH` environment variable.
 
-Alternatively, you can install electron-injector using Cargo, Rust's package manager.
+Alternatively, you can install `electron-injector` using Cargo, Rust's package manager.
 
 ```bash
 $ cargo install electron-injector
@@ -16,7 +16,7 @@ $ cargo install electron-injector
 
 ### Usage
 
-To use electron-injector, simply specify the path to the Electron app and the JavaScript file that you want to inject.
+To use `electron-injector`, simply specify the path to the Electron app and the JavaScript file that you want to inject.
 
 ```bash
 $ electron-injector --script=/path/to/script.js /path/to/electron/app
