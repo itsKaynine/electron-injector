@@ -1,6 +1,6 @@
 [package]
 name = "electron-injector"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2021"
 description = """
 electron-injector is an open source command-line tool written in Rust that
