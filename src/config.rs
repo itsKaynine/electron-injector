@@ -50,7 +50,7 @@ pub struct Config {
     #[arg(short, long, default_value_t = 10_000)]
     pub delay: u64,
 
-    /// Enable prelude script
+    /// Inject prelude script
     #[arg(long)]
     pub prelude: bool,
 }

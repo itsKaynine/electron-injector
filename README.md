@@ -31,7 +31,7 @@ $ electron-injector --script=/path/to/script.js /path/to/electron/app
 -p, --port <PORT>        The remote debugging port [default: 8315]     
 -t, --timeout <TIMEOUT>  Timeout in ms for injecting scripts [default: 10000]
 -d, --delay <DELAY>      Delay in ms to wait after spawning the process [default: 10000]
-    --prelude            Enable prelude script
+    --prelude            Inject prelude script
 -h, --help               Print help
 -V, --version            Print version
 ```
@@ -50,4 +50,4 @@ We welcome contributions from the community. To contribute to `electron-injector
 
 ## License
 
-electron-injector is dual licensed under the [MIT License](https://opensource.org/licenses/MIT) and [Apache-2.0 License](https://opensource.org/licenses/Apache-2.0). See the LICENSE-MIT and LICENSE-APACHE-2.0 files for more information.
+`electron-injector` is dual licensed under the [MIT License](https://opensource.org/licenses/MIT) and [Apache-2.0 License](https://opensource.org/licenses/Apache-2.0). See the LICENSE-MIT and LICENSE-APACHE-2.0 files for more information.
