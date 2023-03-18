@@ -94,8 +94,7 @@ impl Injector {
                 // Inject prelude
                 if self.config.prelude {
                     info!("Injecting prelude script (id: {})", page.id);
-                    _ = self
-                        .evaluate(&mut ws, &prelude_script)
+                    self.evaluate(&mut ws, &prelude_script)
                         .expect("Should be able to evaluate JS");
                 }
 
@@ -103,8 +102,7 @@ impl Injector {
                 for user_script in user_scripts.iter() {
                     // Inject using evaluate
                     info!("Injecting script: {}", user_script.file_path);
-                    _ = self
-                        .evaluate(&mut ws, &user_script.content)
+                    self.evaluate(&mut ws, &user_script.content)
                         .expect("Should be able to evaluate JS");
                 }
 
@@ -176,13 +174,13 @@ impl Injector {
             })
             .collect();
 
-        return scripts;
+        scripts
     }
 
     fn spawn_process(&self) -> Result<Child> {
         // Prepare args
         let mut args = vec![format!("--remote-debugging-port={}", &self.port)];
-        args.extend(self.config.arg.iter().map(|a| a.clone()));
+        args.extend(self.config.arg.iter().cloned());
 
         // Spawn child process
         debug!(
@@ -258,7 +256,7 @@ impl Injector {
         debug!("[Runtime.evaluate] Parsed response: {:#?}", response);
 
         // Handle exception
-        if let Some(_) = response.result.exception_details {
+        if response.result.exception_details.is_some() {
             warn!(
                 "[Runtime.evaluate] Caught exception while evaluating script: {:#?}",
                 response

@@ -10,7 +10,7 @@ pub struct WebSocket {
 
 impl WebSocket {
     pub fn connect(address: &str) -> Result<Self, tungstenite::Error> {
-        let url = url::Url::parse(&address).expect("Should be a valid address");
+        let url = url::Url::parse(address).expect("Should be a valid address");
 
         let (socket, response) = tungstenite::connect(url)?;
         info!("WebSocket connected (status: {})", response.status());
