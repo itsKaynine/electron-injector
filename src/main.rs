@@ -1,3 +1,5 @@
+#![windows_subsystem = "windows"]
+
 use electron_injector::injector::Injector;
 
 fn main() {
